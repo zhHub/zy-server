@@ -2,6 +2,7 @@ package com.zy.server.core;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 /**
  * fileName: ZyCoreServerApplication
@@ -11,6 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  * @author 张建元 18143774515@163.com
  */
+@EnableConfigurationProperties
 @SpringBootApplication
 public class ZyCoreServerApplication {
     
