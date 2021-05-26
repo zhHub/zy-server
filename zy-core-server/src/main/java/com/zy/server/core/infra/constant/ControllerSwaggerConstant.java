@@ -1,14 +1,14 @@
 package com.zy.server.core.infra.constant;
 
 /**
- * fileName: ControllerConstant
+ * fileName: ControllerSwaggerConstant
  * create: 2021-5-24 23:02
- * description:
+ * description: controller swagger 描述
  * history:
  *
  * @author 张建元 18143774515@163.com
  */
-public interface ControllerConstant {
+public interface ControllerSwaggerConstant {
     
     /**
      * 示例 controller 描述
