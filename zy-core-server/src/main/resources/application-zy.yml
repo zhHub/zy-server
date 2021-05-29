@@ -1,0 +1,7 @@
+zy:
+  project:
+    version: ${project.version}
+    description: ${project.description}
+    name: 幼年星辰
+    email: 18143774515@163.com
+    url: '开发中...'

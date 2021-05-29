@@ -1,0 +1,5 @@
+spring:
+  redis:
+    host: redis.server.com
+    database: 0
+    port: 11313

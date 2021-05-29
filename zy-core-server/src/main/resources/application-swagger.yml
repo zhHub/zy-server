@@ -1,0 +1,5 @@
+springfox:
+  documentation:
+    swagger-ui:
+      # swagger-ui 被资源处理的标志。 如果这是 false，则没有 swagger-ui
+      enabled: true

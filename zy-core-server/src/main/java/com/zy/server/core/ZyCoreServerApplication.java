@@ -1,5 +1,6 @@
 package com.zy.server.core;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -12,6 +13,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
  *
  * @author 张建元 18143774515@163.com
  */
+@MapperScan("com.zy.server.core.infra.mapper")
 @EnableConfigurationProperties
 @SpringBootApplication
 public class ZyCoreServerApplication {

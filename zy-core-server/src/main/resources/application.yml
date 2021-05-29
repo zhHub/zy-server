@@ -10,26 +10,14 @@ management:
 spring:
   application:
     name: core-server
-  redis:
-    host: redis.server.com
-    database: 0
-    port: 11313
-  datasource:
-    url: jdbc:mysql://mysql80.server.com:10080/core_db?characterEncoding=UTF-8
-    username: root
-    password: 123456
+  profiles:
+    active:
+      - redis
+      - datasource
+      - email
+      - swagger
+      - zy
+
 logging:
   level:
     - com.zy.server.core: debug
-    - io.swagger.*: debug
-springfox:
-  documentation:
-    swagger-ui:
-      enabled: true
-zy:
-  project:
-    version: ${project.version}
-    description: ${project.description}
-    name: 幼年星辰
-    email: 18143774515@163.com
-    url: '开发中...'
