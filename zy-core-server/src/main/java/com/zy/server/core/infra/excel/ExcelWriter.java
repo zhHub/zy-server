@@ -34,6 +34,7 @@ public class ExcelWriter {
     
     private static final Logger LOG = LoggerFactory.getLogger(ExcelWriter.class);
     private static final String DEFAULT_SHEET_NAME = "Sheet %d";
+    private static final String UTF_8 = "UTF-8";
     private Workbook workbook;
     private final List<SheetWriter> sheetWriterList;
     private final ExcelVersion excelVersion;
@@ -119,7 +120,8 @@ public class ExcelWriter {
     private String encodeFileName(String filename) throws IOException {
         ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         if (servletRequestAttributes == null) {
-            return URLEncoder.encode(filename, "UTF-8");
+            
+            return URLEncoder.encode(filename, UTF_8);
         } else {
             HttpServletRequest request = servletRequestAttributes.getRequest();
             return encodeFileName(request, filename);
@@ -130,16 +132,17 @@ public class ExcelWriter {
         filename = filename.replace("\n", "");
         filename = filename.replace("\r", "");
         if (request == null) {
-            return URLEncoder.encode(filename, "UTF-8");
+            return URLEncoder.encode(filename, UTF_8);
         } else {
             String userAgent = request.getHeader("User-Agent");
             String encodeFilename;
             if (StringUtils.isBlank(userAgent)) {
-                encodeFilename = URLEncoder.encode(filename, "UTF-8");
+                encodeFilename = URLEncoder.encode(filename, UTF_8);
             } else if (!userAgent.contains("MSIE") && !userAgent.contains("like Gecko")) {
+                // 非 IE 、Gecko内核
                 encodeFilename = "=?UTF-8?B?" + Base64.getEncoder().encodeToString(filename.getBytes(StandardCharsets.UTF_8)) + "?=";
             } else {
-                encodeFilename = URLEncoder.encode(filename, "UTF-8");
+                encodeFilename = URLEncoder.encode(filename, UTF_8);
             }
             
             return encodeFilename;

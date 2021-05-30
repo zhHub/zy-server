@@ -29,13 +29,16 @@ public class Email {
     private String from;
     
     @ApiModelProperty(value = "收件人")
-    private List<String> to;
+    @Builder.Default
+    private String[] to = new String[0];
     
     @ApiModelProperty(value = "抄送人")
-    private List<String> cc;
+    @Builder.Default
+    private String[] cc = new String[0];
     
     @ApiModelProperty(value = "密件抄送")
-    private List<String> bcc;
+    @Builder.Default
+    private String[] bcc = new String[0];
     
     @ApiModelProperty(value = "发送日期")
     private Date sentDate;
@@ -56,8 +59,9 @@ public class Email {
     private String templateCode;
     
     @ApiModelProperty(value = "模板内容")
-    private HashMap<String, String> templateText = new HashMap<>();
+    private HashMap<String, Object> templateMap = new HashMap<>();
     
     @ApiModelProperty(value = "附件")
-    private List<String> attachmentPath;
+    @Builder.Default
+    private String[] attachmentPath = new String[0];
 }
