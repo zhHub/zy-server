@@ -91,9 +91,19 @@
             </dependency>
             <!-- 私人订制 -->
             <dependency>
-                <groupId>com.zy.mybatis</groupId>
+                <groupId>com.zy.boot</groupId>
                 <artifactId>zy-mybatis-spring-boot-starter</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>${zy-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zy.boot</groupId>
+                <artifactId>zy-email-spring-boot-starter</artifactId>
+                <version>${zy-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zy.boot</groupId>
+                <artifactId>zy-swagger-spring-boot-starter</artifactId>
+                <version>${zy-boot.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
