@@ -1,5 +1,6 @@
 package com.zy.server.core.domain.repository;
 
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.zy.server.core.domain.entity.email.EmailServerConfig;
 
 /**
@@ -10,7 +11,7 @@ import com.zy.server.core.domain.entity.email.EmailServerConfig;
  *
  * @author 张建元 18143774515@163.com
  */
-public interface EmailServerConfigRepository {
+public interface EmailServerConfigRepository extends IService<EmailServerConfig> {
     /**
      * 通过 id 查询 email 服务主机连接配置
      *

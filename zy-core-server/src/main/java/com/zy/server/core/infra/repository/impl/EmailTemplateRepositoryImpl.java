@@ -37,7 +37,7 @@ public class EmailTemplateRepositoryImpl implements EmailTemplateRepository {
      * @return 模板邮件内容
      */
     @Override
-    public String assemblyTemplateText(String templateCode, HashMap<String, String> templateMap) {
+    public String assemblyTemplateText(String templateCode, HashMap<String, Object> templateMap) {
         // TODO: [张建元 18143774515@163.com 2021-5-30 17:03] 邮件模板部分
         return null;
     }

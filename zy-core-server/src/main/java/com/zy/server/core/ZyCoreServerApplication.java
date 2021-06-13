@@ -13,7 +13,6 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
  *
  * @author 张建元 18143774515@163.com
  */
-@MapperScan("com.zy.server.core.infra.mapper")
 @EnableConfigurationProperties
 @SpringBootApplication
 public class ZyCoreServerApplication {

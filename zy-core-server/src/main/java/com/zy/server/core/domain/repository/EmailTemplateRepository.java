@@ -18,5 +18,5 @@ public interface EmailTemplateRepository {
      * @param templateMap  模板替换内容
      * @return 模板邮件内容
      */
-    String assemblyTemplateText(String templateCode, HashMap<String, String> templateMap);
+    String assemblyTemplateText(String templateCode, HashMap<String, Object> templateMap);
 }

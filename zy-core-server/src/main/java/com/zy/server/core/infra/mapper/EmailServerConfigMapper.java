@@ -1,5 +1,6 @@
 package com.zy.server.core.infra.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.zy.server.core.domain.entity.email.EmailServerConfig;
 import org.apache.ibatis.annotations.Param;
 
@@ -11,7 +12,7 @@ import org.apache.ibatis.annotations.Param;
  *
  * @author 张建元 18143774515@163.com
  */
-public interface EmailServerConfigMapper {
+public interface EmailServerConfigMapper extends BaseMapper<EmailServerConfig> {
     /**
      * 通过 id 查询 email 服务主机连接配置
      *

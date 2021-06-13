@@ -1,5 +1,6 @@
 package com.zy.server.core.infra.repository.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zy.server.core.domain.entity.email.EmailServerConfig;
 import com.zy.server.core.domain.repository.EmailServerConfigRepository;
 import com.zy.server.core.infra.mapper.EmailServerConfigMapper;
@@ -15,7 +16,8 @@ import org.springframework.stereotype.Repository;
  * @author 张建元 18143774515@163.com
  */
 @Repository
-public class EmailServerConfigRepositoryImpl implements EmailServerConfigRepository {
+public class EmailServerConfigRepositoryImpl extends ServiceImpl<EmailServerConfigMapper, EmailServerConfig>
+        implements EmailServerConfigRepository {
     
     private final EmailServerConfigMapper emailServerConfigMapper;
     
