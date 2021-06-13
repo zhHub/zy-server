@@ -13,7 +13,7 @@ spring:
       # 连接超时时间
       connection-timeout: 30000
 
-mybatis:
+mybatis-plus:
   # xml 文件位置
   mapper-locations: classpath:mapper/*Mapper.xml
   configuration:
