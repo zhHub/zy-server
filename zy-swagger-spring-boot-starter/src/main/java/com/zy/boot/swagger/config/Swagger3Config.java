@@ -1,4 +1,4 @@
-package com.zy.swagger.config;
+package com.zy.boot.swagger.config;
 
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

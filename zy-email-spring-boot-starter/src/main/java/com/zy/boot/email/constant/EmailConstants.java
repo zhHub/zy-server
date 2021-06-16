@@ -1,4 +1,4 @@
-package com.zy.email.constant;
+package com.zy.boot.email.constant;
 
 /**
  * fileName: EmailConstants

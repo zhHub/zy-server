@@ -1,4 +1,4 @@
-package com.zy.server.core.infra.config;
+package com.zy.boot.mybatis.config;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Configuration;
@@ -12,6 +12,6 @@ import org.springframework.context.annotation.Configuration;
  * @author 张建元 18143774515@163.com
  */
 @Configuration
-@MapperScan("com.zy.server.core.infra.mapper")
+@MapperScan("com.zy.**.infra.mapper")
 public class MybatisPlusConfig {
 }

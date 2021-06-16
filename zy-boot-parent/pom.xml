@@ -105,6 +105,11 @@
                 <artifactId>zy-swagger-spring-boot-starter</artifactId>
                 <version>${zy-boot.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.zy.boot</groupId>
+                <artifactId>zy-spring-boot-starter</artifactId>
+                <version>${zy-boot.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

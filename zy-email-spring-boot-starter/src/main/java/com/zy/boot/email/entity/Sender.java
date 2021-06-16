@@ -1,4 +1,4 @@
-package com.zy.email.entity;
+package com.zy.boot.email.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,4 +1,4 @@
-package com.zy.swagger.config;
+package com.zy.boot.swagger.config;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

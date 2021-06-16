@@ -1,5 +1,6 @@
 package com.zy.server.core.api.controller;
 
+import com.zy.boot.email.exception.EmailSendException;
 import com.zy.server.core.infra.constant.ControllerSwaggerConstant;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -23,6 +24,6 @@ public class ExampleController {
     @ApiOperation(value = "示例接口")
     @GetMapping
     public String example(){
-        return "示例返回";
+        throw new EmailSendException();
     }
 }

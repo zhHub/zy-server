@@ -1,8 +1,9 @@
-package com.zy.email.component;
+package com.zy.boot.email.component;
 
-import com.zy.email.constant.EmailConstants;
-import com.zy.email.entity.EmailServerConfig;
-import com.zy.email.entity.Sender;
+import com.zy.boot.email.constant.EmailConstants;
+import com.zy.boot.email.entity.EmailServerConfig;
+import com.zy.boot.email.entity.Sender;
+import com.zy.boot.email.exception.EmailSendException;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -85,17 +86,14 @@ public class SendEmail {
      *
      * @param sender            发件人
      * @param simpleMailMessage 邮件内容
-     * @return 发送结果
      */
-    public boolean sendEmail(Sender sender, SimpleMailMessage simpleMailMessage) {
+    public void sendEmail(Sender sender, SimpleMailMessage simpleMailMessage) {
         try {
             configurationJavaMailSenderImpl(sender).send(simpleMailMessage);
             LOG.info(EmailConstants.SUCCESS_MESSAGE);
         } catch (MailException e) {
-            LOG.error(EmailConstants.FAIL_MESSAGE + e.getMessage());
-            return false;
+            throw new EmailSendException(e.getMessage());
         }
-        return true;
     }
     
     /**
@@ -103,17 +101,14 @@ public class SendEmail {
      *
      * @param sender             发件人
      * @param simpleMailMessages 邮件内容
-     * @return 发送结果
      */
-    public boolean sendEmail(Sender sender, SimpleMailMessage... simpleMailMessages) {
+    public void sendEmail(Sender sender, SimpleMailMessage... simpleMailMessages) {
         try {
             configurationJavaMailSenderImpl(sender).send(simpleMailMessages);
             LOG.info(EmailConstants.SUCCESS_MESSAGE);
         } catch (MailException e) {
-            LOG.error(EmailConstants.FAIL_MESSAGE + e.getMessage());
-            return false;
+            throw new EmailSendException(e.getMessage());
         }
-        return true;
     }
     
     /**
@@ -121,17 +116,14 @@ public class SendEmail {
      *
      * @param sender      发件人
      * @param mimeMessage 邮件内容
-     * @return 发送结果
      */
-    public boolean sendEmail(Sender sender, MimeMessage mimeMessage) {
+    public void sendEmail(Sender sender, MimeMessage mimeMessage) {
         try {
             configurationJavaMailSenderImpl(sender).send(mimeMessage);
             LOG.info(EmailConstants.SUCCESS_MESSAGE);
         } catch (MailException e) {
-            LOG.error(EmailConstants.FAIL_MESSAGE + e.getMessage());
-            return false;
+            throw new EmailSendException(e.getMessage());
         }
-        return true;
     }
     
     /**
@@ -139,17 +131,14 @@ public class SendEmail {
      *
      * @param sender       发件人
      * @param mimeMessages 邮件内容
-     * @return 发送结果
      */
-    public boolean sendEmail(Sender sender, MimeMessage... mimeMessages) {
+    public void sendEmail(Sender sender, MimeMessage... mimeMessages) {
         try {
             configurationJavaMailSenderImpl(sender).send(mimeMessages);
             LOG.info(EmailConstants.SUCCESS_MESSAGE);
         } catch (MailException e) {
-            LOG.error(EmailConstants.FAIL_MESSAGE + e.getMessage());
-            return false;
+            throw new EmailSendException(e.getMessage());
         }
-        return true;
     }
     
     /**
@@ -157,17 +146,14 @@ public class SendEmail {
      *
      * @param sender                发件人
      * @param mimeMessagePreparator 邮件内容
-     * @return 发送结果
      */
-    public boolean sendEmail(Sender sender, MimeMessagePreparator mimeMessagePreparator) {
+    public void sendEmail(Sender sender, MimeMessagePreparator mimeMessagePreparator) {
         try {
             configurationJavaMailSenderImpl(sender).send(mimeMessagePreparator);
             LOG.info(EmailConstants.SUCCESS_MESSAGE);
         } catch (MailException e) {
-            LOG.error(EmailConstants.FAIL_MESSAGE + e.getMessage());
-            return false;
+            throw new EmailSendException(e.getMessage());
         }
-        return true;
     }
     
     /**
@@ -175,16 +161,13 @@ public class SendEmail {
      *
      * @param sender                 发件人
      * @param mimeMessagePreparators 邮件内容
-     * @return 发送结果
      */
-    public boolean sendEmail(Sender sender, MimeMessagePreparator... mimeMessagePreparators) {
+    public void sendEmail(Sender sender, MimeMessagePreparator... mimeMessagePreparators) {
         try {
             configurationJavaMailSenderImpl(sender).send(mimeMessagePreparators);
             LOG.info(EmailConstants.SUCCESS_MESSAGE);
         } catch (MailException e) {
-            LOG.error(EmailConstants.FAIL_MESSAGE + e.getMessage());
-            return false;
+            throw new EmailSendException(e.getMessage());
         }
-        return true;
     }
 }
