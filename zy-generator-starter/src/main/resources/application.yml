@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://mysql80.server.com:3306/db_generator?characterEncoding=UTF-8&serverTimezone=UTC
+    url: jdbc:mysql://mysql80.server.com:23306/db_generator?characterEncoding=UTF-8&serverTimezone=UTC
     username: root
     password: 123456
     hikari:

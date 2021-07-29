@@ -2,22 +2,27 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <parent>
-        <groupId>com.zy.boot</groupId>
-        <artifactId>zy-boot-parent</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-        <relativePath/>
-    </parent>
-
+    <groupId>com.zy.boot</groupId>
     <artifactId>zy-generator-starter</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>zy-generator-starter</name>
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <zy-boot.version>0.0.1-SNAPSHOT</zy-boot.version>
+        <spring-boot.version>2.5.0</spring-boot.version>
+        <swagger.version>3.0.0</swagger.version>
+        <poi.version>4.1.2</poi.version>
+        <xlsx-streamer.version>2.2.0</xlsx-streamer.version>
+        <mybatis.version>2.2.0</mybatis.version>
+        <mybatis-plus.version>3.4.3</mybatis-plus.version>
+        <mybatis-plus-generator.version>3.5.0</mybatis-plus-generator.version>
+        <druid.version>1.2.6</druid.version>
     </properties>
     <dependencies>
+        <!-- spring boot start web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -26,6 +31,7 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-generator</artifactId>
+            <version>${mybatis-plus-generator.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.velocity</groupId>
@@ -51,6 +57,7 @@
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>${mybatis-plus.version}</version>
         </dependency>
         <!-- lombok -->
         <dependency>
@@ -59,6 +66,19 @@
             <optional>true</optional>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- springboot 配套版本管理 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
